@@ -3,12 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { makeFalseFunc, makeTrueFunc } from '../../../actionTypes/cardAction';
 
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Button from '@mui/material/Button'; // MUI Button
+import * as Mui from '@mui/material';
 
 export const Button = (props) => {
   const dispatch = useDispatch();
@@ -35,31 +30,31 @@ export const Button = (props) => {
             {props.content}
           </button>
 
-          <Dialog
+          <Mui.Dialog
             open={open}
             onClose={handleClose}
             aria-labelledby="resume-dialog-title"
             aria-describedby="resume-dialog-description"
           >
-            <DialogTitle id="resume-dialog-title">
+            <Mui.DialogTitle id="resume-dialog-title">
               Choose Resume Layout
-            </DialogTitle>
+            </Mui.DialogTitle>
 
-            <DialogContent>
-              <DialogContentText id="resume-dialog-description">
+            <Mui.DialogContent>
+              <Mui.DialogContentText id="resume-dialog-description">
                 Do you want a <strong>single-column</strong> resume layout?
-              </DialogContentText>
-            </DialogContent>
+              </Mui.DialogContentText>
+            </Mui.DialogContent>
 
-            <DialogActions>
-              <Button onClick={handleYes} variant="contained" color="primary">
+            <Mui.DialogActions>
+              <Mui.Button onClick={handleYes} variant="contained" color="primary">
                 Yes
-              </Button>
-              <Button onClick={handleNo} variant="outlined" color="secondary">
+              </Mui.Button>
+              <Mui.Button onClick={handleNo} variant="outlined" color="secondary">
                 No
-              </Button>
-            </DialogActions>
-          </Dialog>
+              </Mui.Button>
+            </Mui.DialogActions>
+          </Mui.Dialog>
         </>
       ) : (
         <button className={`${styles.btn}`}>
